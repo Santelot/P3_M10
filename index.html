@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P3-M10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+    </style>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+        function updateActivities() {
+            var selectedTime = document.getElementById('time-select').value;
+            document.getElementById('selected-time').innerText = "Tiempo efectivo de clase: " + selectedTime + " minutos";
+
+            // Mostrar/ocultar actividades y pasos según la duración seleccionada
+            if (selectedTime === '45') {
+                document.getElementById('actividad2').style.display = 'none'; // Eliminar Actividad 2
+                document.getElementById('actividad3-paso4').style.display = 'none'; // Eliminar Paso 4 de la Actividad 3
+            } else if (selectedTime === '40') {
+                document.getElementById('actividad2').style.display = 'none'; // Eliminar Actividad 2
+                document.getElementById('actividad3-paso4').style.display = 'none'; // Eliminar Paso 4 de la Actividad 3
+                // Puedes agregar más pasos que se eliminarían aquí según la duración
+            } else {
+                // Mostrar todo en la versión de 50 minutos
+                document.getElementById('actividad2').style.display = 'block';
+                document.getElementById('actividad3-paso4').style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body onload="updateActivities()">
+
+<div class="header">
+    <h1>Playbook-P3-M10</h1>
+    <div>
+        <label for="time-select">Tiempo efectivo de clase:</label>
+        <select id="time-select" onchange="updateActivities()">
+            <option value="50">50 minutos</option>
+            <option value="45">45 minutos</option>
+            <option value="40">40 minutos</option>
+        </select>
+    </div>
+    <h2 id="selected-time">Tiempo efectivo de clase: 50 minutos</h2>
+</div>
+
+<div class="container">
+   
+
+
+
+    <!-- Actividad 0: Revisión de Misión -->
+    <div class="banner" onclick="toggleContent('actividad0')">
+        <div class="title">
+            <span>📚 Actividad 0: Revisión de Misión</span>
+            <span>⏰ Tiempo: No especificado</span>
+        </div>
+        <div class="subtitle">Revisar los materiales antes de iniciar</div>
+    </div>
+    <div id="actividad0" class="content">
+        <div class="section">
+            <div class="step-title">Paso 1: Proyectar Diapositiva 1 "Revisar los materiales"</div>
+            <div class="dialogue">"¡Genios! Antes de empezar a crear y mejorar nuestro increíble juego, necesitamos asegurarnos de que tenemos todo lo que necesitamos. Revisemos juntos."</div>
+        </div>
+    </div>
+
+ <!-- Actividad 1: Saludo y Ritual Gnius Club -->
+<div class="banner" onclick="toggleContent('actividad1')">
+    <div class="title">
+        <span>📚 Actividad 1: Saludo y Ritual Gnius Club</span>
+        <span>⏰ Tiempo: 3 minutos</span>
+    </div>
+    <div class="subtitle">Dar la bienvenida y preparar el ambiente para la lección</div>
+</div>
+<div id="actividad1" class="content">
+    <div class="section">
+        <div class="step-title">Paso 1 (0.5 minutos): Proyectar Diapositiva 2 "Saludo a los estudiantes"</div>
+        <div class="dialogue">"¡Hola, Genios! ¿Listos para mejorar su juego y agregar nuevos retos? ¡Va a ser increíble!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 2 (1 minuto): Proyectar Diapositiva 3 "Evaluación de Estado de Ánimo"</div>
+        <div class="dialogue">"Genios, si están súper emocionados y listos para la acción, levanten la mano al elegir la cara feliz. Si necesitan un poco más de energía, elijan la cara pensativa y respiren profundo."</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 3 (0.5 minutos): Proyectar Diapositiva 4 "Ritual de Agradecimiento"</div>
+        <div class="dialogue">"¡Gracias por estar aquí, Genios! Hoy es un día para mejorar nuestras habilidades y crear algo genial. ¡Vamos a darlo todo!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 4 (1 minuto): Proyectar Diapositiva 5 "Objetivos de la Misión"</div>
+        <div class="dialogue">"Hoy tenemos tres grandes objetivos: 1) Mejorar nuestro juego. 2) Agregar niveles emocionantes. 3) Enfrentar los nuevos retos en equipo que harán nuestro juego más divertido."</div>
+    </div>
+</div>
+<!-- Actividad 2: State Change -->
+<div class="banner" onclick="toggleContent('actividad2')">
+    <div class="title">
+        <span>📚 Actividad 2: State Change</span>
+        <span>⏰ Tiempo: 2.5 minutos</span>
+    </div>
+    <div class="subtitle">Ejercicio físico para conectar con el concepto de mejorar el juego</div>
+</div>
+<div id="actividad2" class="content">
+    <div class="section">
+        <div class="step-title">Paso 1 (0.5 minutos): Proyectar Diapositiva 6 "Ejercicio de saltar obstáculos"</div>
+        <div class="dialogue">"¡Genios! Ahora vamos a movernos como los personajes de nuestros juegos. Imagina que tu personaje debe saltar obstáculos en el nuevo nivel que vas a crear. Cada vez que diga 'obstáculo', ¡salta como si estuvieras en tu propio videojuego!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 2 (2 minutos): Proyectar Diapositiva 7 "Salta obstáculos para agregar desafíos al juego"</div>
+        <div class="dialogue">"¡Obstáculo! ¡Salta alto! Piensa en cómo tu personaje superará más retos en el nivel que vas a diseñar."</div>
+    </div>
+</div>
+<!-- Actividad 3: Challenge -->
+<div class="banner" onclick="toggleContent('actividad3')">
+    <div class="title">
+        <span>📚 Actividad 3: Challenge</span>
+        <span>⏰ Tiempo: 34.5 minutos</span>
+    </div>
+    <div class="subtitle">Agregar nuevos niveles y retos al juego creado</div>
+</div>
+<div id="actividad3" class="content">
+    <div class="section">
+        <div class="step-title">Paso 1 (1 minuto): Proyectar Diapositiva 8 "Explicación del reto de la clase"</div>
+        <div class="dialogue">"¡Genios, es hora del desafío! Vamos a mejorar el juego que crearon antes, agregando nuevos niveles y retos. ¡Vamos a llevar este juego al siguiente nivel!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 2 (15 minutos): Proyectar Diapositiva 9 "Agregar un nivel adicional con control y eventos en Scratch"</div>
+        <div class="dialogue">"Tienen 15 minutos para agregar un nuevo nivel a su juego. Piensa en lo que puede hacer más desafiante y emocionante este nivel. ¿Qué obstáculos va a enfrentar tu personaje?"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 3 (15 minutos): Proyectar Diapositiva 10 "Continuar mejorando el nivel, agregando más complejidad"</div>
+        <div class="dialogue">"Tienen otros 15 minutos para agregar más desafíos a su nuevo nivel. ¿Pueden incluir enemigos o nuevos obstáculos que hagan el juego más emocionante?"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 4 (3 minutos): Proyectar Diapositiva 11 "Reflexión sobre el proceso de mejora del juego"</div>
+        <div class="dialogue">"¡Genios, han hecho un trabajo increíble! Reflexionemos: ¿qué fue lo más emocionante de agregar estos nuevos niveles y desafíos? ¿Cómo creen que ha mejorado su juego?"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 5 (0.5 minutos): Proyectar Diapositiva 12 "Revisión de los tres objetivos cumplidos"</div>
+        <div class="dialogue">"Antes de terminar, hagamos una revisión rápida de nuestros objetivos. ¿Mejoramos nuestro juego? ¿Agregamos nuevos niveles? ¿Enfrentamos nuevos retos? ¡Misión cumplida, Genios!"</div>
+    </div>
+</div>
+<!-- Actividad 4: Team Gnius -->
+<div class="banner" onclick="toggleContent('actividad4')">
+    <div class="title">
+        <span>📚 Actividad 4: Team Gnius</span>
+        <span>⏰ Tiempo: 9.5 minutos</span>
+    </div>
+    <div class="subtitle">Prueba de juegos en equipos y retroalimentación</div>
+</div>
+<div id="actividad4" class="content">
+    <div class="section">
+        <div class="step-title">Paso 1 (0.5 minutos): Proyectar Diapositiva 13 "Formación de equipos de 2 personas"</div>
+        <div class="dialogue">"Genios, ahora formaremos equipos de 2 personas. Un genio probará el juego creado por el otro, y luego darán retroalimentación sobre lo que más les gustó y qué podría mejorarse."</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 2 (0.5 minutos): Proyectar Diapositiva 14 "Temporizador de 30 segundos para organizarse en equipos"</div>
+        <div class="dialogue">"Tienen 30 segundos para formar sus equipos y organizarse. ¡Vamos, Genios, que el tiempo corre!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 3 (4 minutos): Proyectar Diapositiva 15 "Uno de los estudiantes juega mientras el otro observa"</div>
+        <div class="dialogue">"Uno de ustedes va a jugar el nuevo nivel mientras el otro observa y toma notas. Tienen 4 minutos para probar el juego y ver qué les parece."</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 4 (0.5 minutos): Proyectar Diapositiva 16 "Temporizador de 30 segundos para intercambiar roles"</div>
+        <div class="dialogue">"Tienen 30 segundos para intercambiar roles. ¡Vamos a darle la oportunidad de jugar al otro compañero!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 5 (4 minutos): Proyectar Diapositiva 17 "El otro estudiante juega y el primero observa"</div>
+        <div class="dialogue">"Ahora el estudiante que estaba observando va a jugar, y el que ya jugó tomará notas. ¡Tienen otros 4 minutos para probar el nivel y dar retroalimentación!"</div>
+    </div>
+</div>
+<!-- Actividad 5: Honor de Dojo -->
+<div class="banner" onclick="toggleContent('actividad5')">
+    <div class="title">
+        <span>📚 Actividad 5: Honor de Dojo</span>
+        <span>⏰ Tiempo: 3 minutos</span>
+    </div>
+    <div class="subtitle">Reflexión final y reconocimiento del trabajo en equipo</div>
+</div>
+<div id="actividad5" class="content">
+    <div class="section">
+        <div class="step-title">Paso 1 (0.5 minutos): Proyectar Diapositiva 18 "Revisión de los objetivos del día"</div>
+        <div class="dialogue">"Genios, antes de terminar, repasemos lo que logramos hoy. ¿Mejoramos nuestros juegos? ¿Agregamos niveles y nuevos retos? ¡Misión cumplida!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 2 (0.5 minutos): Agradecimiento sin diapositiva "Reconocimiento del trabajo en equipo"</div>
+        <div class="dialogue">"Hoy todos trabajaron de maravilla. ¡Su creatividad y colaboración hicieron que los juegos sean aún mejores! ¡Excelente trabajo, equipo!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 3 (1 minuto): Proyectar Diapositiva 19 "Reflexión sobre el trabajo en equipo"</div>
+        <div class="dialogue">"Reflexionemos juntos: ¿cómo les ayudó trabajar en equipo para mejorar sus juegos? ¿Qué fue lo que más les gustó de la colaboración con sus compañeros?"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 4 (1 minuto): Proyectar Diapositiva 20 "Organizar el espacio de trabajo"</div>
+        <div class="dialogue">"Para terminar, honremos nuestro espacio de trabajo organizando y dejando todo en orden. ¡Un buen genio siempre deja todo limpio y organizado!"</div>
+    </div>
+</div>
+
+ 
+</div> <!-- Cierre del container -->
+
+  
+
+    </body>
+    </html>
